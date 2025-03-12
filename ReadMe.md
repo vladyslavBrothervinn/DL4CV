@@ -1,4 +1,4 @@
-# Custom Image Classification Dataset Loader
+# Animal Classification Dataset Loader
 
 ## Overview
 This project provides a PyTorch-based dataset class for loading and processing image datasets stored in a structured folder format. The dataset class ensures proper distribution of images into **train (70%)**, **validation (20%)**, and **test (10%)** subsets. The dataset is dynamically detected from folder names, making it adaptable for different classification tasks.
@@ -55,9 +55,9 @@ data_path = "path/to/data"
 transform = None  # You can apply torchvision transforms
 
 # Create dataset instances
-train_dataset = CustomImageDataset(data_path, split="train", transform=transform)
-valid_dataset = CustomImageDataset(data_path, split="valid", transform=transform)
-test_dataset = CustomImageDataset(data_path, split="test", transform=transform)
+train_dataset = AnimalDataset(data_path, split="train", transform=transform)
+valid_dataset = AnimalDataset(data_path, split="valid", transform=transform)
+test_dataset = AnimalDataset(data_path, split="test", transform=transform)
 
 # DataLoader for batching
 train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
@@ -73,10 +73,4 @@ assert len(set(train_dataset.images).intersection(test_dataset.images)) == 0
 assert len(set(valid_dataset.images).intersection(test_dataset.images)) == 0
 print("No data leakage detected!")
 ```
-
-## Acknowledgments
-This project was developed as part of a **computer vision and deep learning practice task**. Contributions are welcome! 🚀
-
-## License
-This project is licensed under the MIT License - see the `LICENSE` file for details.
 
