@@ -48,7 +48,7 @@ pip install torch torchvision pillow numpy matplotlib
 ### **Using the Dataset in PyTorch**
 ```python
 from torch.utils.data import DataLoader
-from custom_dataset import CustomImageDataset  # Import the dataset class
+from custom_dataset import AnimalDataset  # Import the dataset class
 
 # Define paths and transformations (optional)
 data_path = "path/to/data"
